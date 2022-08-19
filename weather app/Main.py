@@ -1,13 +1,11 @@
-from cgitb import text
+
 import json
-from logging import root
 from tkinter import *
 import tkinter as tk
 from geopy.geocoders import Nominatim
 from tkinter import ttk, messagebox
 from timezonefinder import TimezoneFinder
 from datetime import *
-import pytz
 import requests
 from PIL import Image, ImageTk
 
@@ -31,11 +29,6 @@ def getweather():
     result = obj.timezone_at(lng=location.longitude,lat=location.latitude)
     Timezone.config(text=result)
     long_lat.config(text=f"{round(location.latitude,4)}° / {round(location.longitude,4)}°")
-
-    # home = pytz.timezone(result)
-    # local_time = datetime.now(home)
-    # current_time = local_time.strftime("%I:%M:%p")
-    # clock.config(text=current_time)
 
     # weather
     api_key = "1df75e289146bf8214ea82e4bf521acf"
@@ -228,9 +221,6 @@ Label(frame,image=secondbox,bg="#212120").place(x=600,y=30)
 Label(frame,image=secondbox,bg="#212120").place(x=700,y=30)
 Label(frame,image=secondbox,bg="#212120").place(x=800,y=30)
 
-# clock(place time here)
-# clock = Label(root,font=("Helvatica",20,"bold"), fg="black",bg="#F0F0F0")  
-# clock.place(x=15,y=15)
 
 # timezone
 Timezone = Label(root,font=("Helvatica",16,"bold"), fg="white",bg="#808080")
